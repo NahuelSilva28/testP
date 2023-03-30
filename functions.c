@@ -43,6 +43,48 @@ while (str[len])
 _putchar(str[len++]);
 return (len);
 }
+/**
+*print_INT - Prints an integer
+*
+*@args: A va_list containing the integer to print
+*
+*Return: The number of characters printed
+*/
+int print_INT(va_list args)
+{
+unsigned int decimal, digit, natural;
+int n = va_arg(args, int);
+int count = 0;
+
+if (n == 0)
+{
+_putchar('0');
+return (1);
+}
+else if (n < 0)
+{
+_putchar('-');
+natural = -n;
+count++;
+}
+else
+natural = n;
+
+decimal = 1;
+while (decimal <= natural / 10)
+decimal *= 10;
+
+while (decimal > 0)
+{
+digit = natural / decimal;
+_putchar(digit + '0');
+count++;
+natural %= decimal;
+decimal /= 10;
+}
+
+return (count);
+}
 
 /**
 *print_DEC - prints a decimal (base 10) integer
@@ -78,6 +120,7 @@ count++;
 }
 return (count);
 }
+
 
 /**
 *print_PER - prints a percent character

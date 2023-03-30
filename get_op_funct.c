@@ -11,11 +11,11 @@
 int (*get_op_func(char format))(va_list args)
 {
 	fmt_t opp[] = {
-		{'c', print_c},
-		{'s', print_s},
-		{'d', print_d},
-		{'i', print_d},
-		{'%', print_m},
+		{'c', print_CHAR},
+		{'s', print_STR},
+		{'d', print_DEC},
+		{'i', print_INT},
+		{'%', print_PER},
 		{'\0', NULL}
 	};
 	int i;
