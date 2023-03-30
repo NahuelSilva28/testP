@@ -23,3 +23,4 @@ int print_CHAR(va_list args);
 int print_STR(va_list args);
 int print_DEC(va_list args);
 int print_PER(va_list args);
+int (*get_op_func(char format))(va_list args);
